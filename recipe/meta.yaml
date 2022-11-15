@@ -35,6 +35,7 @@ test:
     - pip check
 
 about:
+  home: https://github.com/pradyunsg/installer
   description: |
     This is a low-level library for installing a Python package from a wheel distribution.
     It provides basic functionality and abstractions for handling wheels and installing packages from wheels.
@@ -42,7 +43,7 @@ about:
   license: MIT
   license_file: LICENSE
   license_family: MIT
-  dev_url: https://github.com/pradyunsg/installer
+  dev_url: https://installer.readthedocs.io/en/stable/
   doc_url: https://github.com/pypa/installer/tree/main/docs
 
 extra:
