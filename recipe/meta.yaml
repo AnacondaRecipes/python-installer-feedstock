@@ -22,7 +22,7 @@ requirements:
     - python
     - setuptools
     - wheel
-    - flit-core >=3.2.0,<4
+    - flit-core 3.8.0
   run:
     - python
 
