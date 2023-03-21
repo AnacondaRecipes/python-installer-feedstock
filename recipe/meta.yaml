@@ -43,7 +43,7 @@ about:
   license: MIT
   license_file: LICENSE
   license_family: MIT
-  dev_url: https://installer.readthedocs.io/en/stable/
+  dev_url: https://installer.pypa.io/en/stable/
   doc_url: https://github.com/pypa/installer/tree/main/docs
 
 extra:
