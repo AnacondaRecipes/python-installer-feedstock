@@ -13,7 +13,7 @@ source:
 
 build:
   skip: True  # [py<37]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install --no-deps . -vv
 
 requirements:
@@ -22,7 +22,7 @@ requirements:
     - python
     - setuptools
     - wheel
-    - flit-core 3.8.0
+    - flit-core 3
   run:
     - python
 
