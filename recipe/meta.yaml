@@ -1,36 +1,39 @@
 {% set name = "python-installer" %}
-{% set pypi_name = "installer" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 
 package:
-  name: {{ name|lower }}
+  name: {{ name }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ pypi_name[0] }}/{{ pypi_name }}/{{ pypi_name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name.split('-')[1][0] }}/{{ name.split('-')[1] }}/{{ name.split('-')[1] }}-{{ version }}.tar.gz
   sha256: c6d691331621cf3fec4822f5c6f83cab3705f79b316225dc454127411677c71f
 
 build:
-  noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install --no-deps --no-build-isolation . -vv
+  skip: true  # [py<310]
 
 requirements:
   host:
     - pip
-    - python >=3.10
+    - python
     - flit-core >=3.11.0,<4
   run:
-    - python >=3.10
+    - python
 
 test:
-  requires:
-    - pip
+  source_files:
+    - tests
   imports:
     - installer
   commands:
     - pip check
+    - pytest -v tests
+  requires:
+    - pip
+    - pytest
 
 about:
   home: https://github.com/pypa/installer
