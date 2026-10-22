@@ -18,7 +18,7 @@ requirements:
   host:
     - pip
     - python
-    - flit-core <5,>=3.11
+    - flit-core >=3.11,<5
   run:
     - python
 
@@ -29,7 +29,7 @@ test:
     - installer
   commands:
     - pip check
-    - pytest -v tests
+    - pytest -vv tests
   requires:
     - pip
     - pytest
